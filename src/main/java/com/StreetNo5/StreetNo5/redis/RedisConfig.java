@@ -40,7 +40,7 @@ public class RedisConfig {
     @Bean
     public RedissonClient redissonClient() {
         Config config = new Config();
-        config.useSingleServer().setAddress("redis://localhost:6379")
+        config.useSingleServer().setAddress("redis://"+host+":"+port)
                 .setPassword(password)
                 .setConnectionPoolSize(10)
                 .setConnectionMinimumIdleSize(1);
